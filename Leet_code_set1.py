@@ -30,4 +30,24 @@ for num in nums[1:]:
     if max_current > max_global:
         max_global = max_current
         
-print(max_global)
+# print(max_global)
+
+"""
+Q3: Best Time to Buy and Sell Stock
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+"""
+
+def maxProfit(self, prices):
+    buy_price = prices[0]
+    profit = 0
+
+    for i in prices:
+        if buy_price > i:
+            buy_price = i
+
+        profit = max(profit, i - buy_price)
+
+    return profit
+    
