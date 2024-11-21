@@ -50,7 +50,29 @@ def maxProfit(self, prices):
         profit = max(profit, i - buy_price)
 
     return profit
-    
+
+"""
+Q4: Remove Element
+Input: nums = [0,1,2,2,3,0,4,2], val = 2
+Output: 5, nums = [0,1,4,0,3,_,_,_]
+Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
+Note that the five elements can be returned in any order.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+"""
+nums = [0,1,2,2,3,0,4,2]
+val = 2
+k = 0
+def removeElement(nums, val):
+    for i in nums:
+        if i == val:
+            nums.remove(i)
+            nums.append(i)
+        else:
+            k += 1
+
+return k, nums
+
+
 """
 Q21: Merge Sorted Array
 Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
@@ -62,6 +84,11 @@ The result of the merge is [1,2,2,3,5,6] with the underlined elements coming fro
 nums1 = [1,2,3,0,0,0]
 nums2 = [2,5,6]
 
+def merge(, nums1, m, nums2, n):
+      for j in range(n):
+          nums1[m+j] = nums2[j]
+      nums1.sort()
+################ or ########################
 def merge(nums1, nums2):
         output_list = []
         for i, j in zip(nums1, nums2):
@@ -71,4 +98,5 @@ def merge(nums1, nums2):
                 output_list.append(j)
 
         return sorted(output_list)
+
 
