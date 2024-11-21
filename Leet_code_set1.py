@@ -51,3 +51,24 @@ def maxProfit(self, prices):
 
     return profit
     
+"""
+Q21: Merge Sorted Array
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+"""
+
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+
+def merge(nums1, nums2):
+        output_list = []
+        for i, j in zip(nums1, nums2):
+            if i != 0:
+                output_list.append(i)
+            if j != 0:
+                output_list.append(j)
+
+        return sorted(output_list)
+
