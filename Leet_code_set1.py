@@ -1,3 +1,4 @@
+from typings import List, dict
 """
 Q1. Two Sum
 
@@ -143,3 +144,24 @@ def removeDuplicates(nums):
             index += 1
     
     return index
+
+"""
+Q8 Majority Element
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+"""
+
+def majorityElement(nums):
+    count = 0
+    candidate = 0
+    
+    for num in nums:
+        if count == 0:
+            candidate = num
+        
+        if num == candidate:
+            count += 1
+        else:
+            count -= 1
+    
+    return candidate
