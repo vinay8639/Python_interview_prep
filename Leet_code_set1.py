@@ -165,3 +165,19 @@ def majorityElement(nums):
             count -= 1
     
     return candidate
+
+"""
+Q9 Rotate Array
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4]
+"""
+
+def rotate( nums: List[int], k: int) -> None:
+    num_count = len(nums)
+    if k > 0:
+        k %= num_count
+        nums[:] = nums[-k:] + nums[:-k]
