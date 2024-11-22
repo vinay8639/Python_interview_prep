@@ -95,7 +95,7 @@ def remove_duplicates(nums):
 
 
 """
-Q21: Merge Sorted Array
+Q6: Merge Sorted Array
 Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
 Output: [1,2,2,3,5,6]
 Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
@@ -121,3 +121,25 @@ def merge(nums1, nums2):
         return sorted(output_list)
 
 
+"""
+Q7 Remove Duplicates from Sorted Array II
+Input: nums = [1,1,1,2,2,3]
+Output: 5, nums = [1,1,2,2,3,_]
+Explanation: Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
+"""
+
+def removeDuplicates(nums):
+    index = 1
+    occurance = 1
+
+    for i in range(1, len(nums)):
+        if nums[i] == nums[i-1]:
+            occurance += 1
+        else:
+            occurance = 1
+
+        if occurance <= 2:
+            nums[index] = nums[i]
+            index += 1
+    
+    return index
